@@ -1,0 +1,13 @@
+$background-color: #ffffff;
+
+footer {
+  background-color: $background-color;
+  bottom: 0;
+}
+
+.footer-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 32px 320px 0 320px;
+  align-items: center;
+}
