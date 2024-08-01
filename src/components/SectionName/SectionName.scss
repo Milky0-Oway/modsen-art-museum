@@ -1,0 +1,22 @@
+@import "src/variables";
+
+.section-name {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.section-name h2 {
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 40px;
+  text-align: center;
+}
+
+.section-name h4 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: center;
+  color: $primary-light;
+}

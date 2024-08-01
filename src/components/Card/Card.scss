@@ -1,0 +1,109 @@
+@import "src/variables";
+
+.card {
+  position: relative;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-link {
+  cursor: pointer;
+  &:hover {
+    box-shadow: 0 2px 35px 14px rgba(13, 13, 13, 0.04);
+  }
+}
+
+.card-link img {
+  position: relative;
+  width: 387px;
+  height: 444px;
+  z-index: 0;
+}
+
+.card-text {
+  position: relative;
+  margin-top: -62px;
+  box-sizing: border-box;
+  width: 334px;
+  height: 132px;
+  background: $white;
+  border: 1px solid $border;
+  display: flex;
+  gap: 8px;
+  padding: 17px 24px;
+  align-items: start;
+  align-content: center;
+  justify-items: stretch;
+  z-index: 1;
+}
+
+.art-info {
+  width: 219px;
+  height: 98px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.art-title {
+  height: fit-content;
+  width: 100%;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 26px;
+  letter-spacing: -0.03em;
+}
+
+.artist-title {
+  margin-top: -7px;
+  height: fit-content;
+  width: auto;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 26px;
+  letter-spacing: -0.01em;
+  color: $primary-light;
+}
+
+.art-status {
+  height: fit-content;
+  width: auto;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 26px;
+  letter-spacing: -0.01em;
+}
+
+.art-title,
+.artist-title,
+.art-status {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.button-favorite {
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 59px;
+  height: 59px;
+  background-color: $unfavorite-background;
+  border-radius: 50%;
+  transition: background 0.3s ease-in-out;
+  cursor: pointer;
+  position: relative;
+}
+
+.button-favorite:hover {
+  background-color: $favorite-background;
+}
+
+.button-favorite::before {
+  content: url(../../assets/bookmark_main.svg);
+  width: 24px;
+  height: 24px;
+}

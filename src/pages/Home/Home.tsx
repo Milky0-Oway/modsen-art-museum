@@ -7,6 +7,8 @@ import { Art, URL_ART, URL_SEARCH } from '../../constants/api';
 
 import './Home.scss';
 import SearchBar from '../../components/SearchBar/SearchBar.tsx';
+import SectionName from "../../components/SectionName/SectionName.tsx";
+import Card from "../../components/Card/Card.tsx";
 
 const Home = (): JSX.Element => {
   const [searchResult, setSearchResult] = useState<Art[]>([]);
@@ -41,7 +43,18 @@ const Home = (): JSX.Element => {
           </h1>
           <SearchBar onSearch={handleSearch} />
         </section>
-        {searchResult.length > 0}
+        {searchResult.length > 0 && (
+            <section className='search-result'>
+                <SectionName title='Search result' subtitle='We found'/>
+                {searchResult.map((el) => <Card item={el}/>)}
+            </section>
+        )}
+          <section className='gallery'>
+              <SectionName title='Our special gallery' subtitle='Topics for you'/>
+          </section>
+          <section className='small-gallery'>
+              <SectionName title='Other works for you' subtitle='Here some more'/>
+          </section>
       </main>
       <Footer />
     </div>
