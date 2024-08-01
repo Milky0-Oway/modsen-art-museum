@@ -7,10 +7,6 @@
       "path": "./tsconfig.node.json"
     }
   ],
-  "include": [
-    "src"
-  ],
-  "files": [
-    "src/declarations.d.ts"
-  ]
+  "include": ["src"],
+  "files": ["src/declarations.d.ts"]
 }

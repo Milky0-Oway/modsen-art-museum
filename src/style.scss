@@ -1,0 +1,12 @@
+@import 'variables';
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+html,
+body {
+  font-family: 'Lexend Deca', sans-serif;
+  color: $gray;
+  margin: 0;
+  padding: 0;
+}

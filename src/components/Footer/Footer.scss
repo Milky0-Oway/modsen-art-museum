@@ -1,7 +1,7 @@
-$background-color: #ffffff;
+@import '../../variables';
 
 footer {
-  background-color: $background-color;
+  background-color: $footer-background;
   bottom: 0;
 }
 
