@@ -6,7 +6,8 @@
 }
 
 .search-result-list {
-  margin-top: 20px;
+  width: 80%;
+  margin: 20px auto 0;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -15,6 +16,5 @@
   padding: 0;
   gap: 16px;
   position: relative;
-  width: 100%;
   height: fit-content;
 }

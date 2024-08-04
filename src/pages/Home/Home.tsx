@@ -5,12 +5,13 @@ import Footer from '../../components/Footer/Footer.tsx';
 import SearchBar from '../../components/SearchBar/SearchBar.tsx';
 import SectionName from '../../components/SectionName/SectionName.tsx';
 import SearchResultList from '../../components/SearchResultList/SearchResultList.tsx';
+import Loader from '../../components/Loader/Loader.tsx';
+import CardList from '../../components/CardList/CardList.tsx';
+import SmallCardList from '../../components/SmallCardList/SmallCardList.tsx';
 
 import { Art, URL_ART, URL_SEARCH } from '../../constants/api';
 
 import './Home.scss';
-import Loader from "../../components/Loader/Loader.tsx";
-import CardList from "../../components/CardList/CardList.tsx";
 
 const Home = (): JSX.Element => {
   const [searchResult, setSearchResult] = useState<Art[]>([]);
@@ -55,16 +56,20 @@ const Home = (): JSX.Element => {
             <SectionName title="Search result" subtitle="We found" />
             <SearchResultList loading={loading} searchResult={searchResult} />
           </section>
-        ) : (loading &&
-            <div style={{marginTop: '30px'}}>
-              <Loader/>
-            </div>)}
+        ) : (
+          loading && (
+            <div style={{ marginTop: '30px' }}>
+              <Loader />
+            </div>
+          )
+        )}
         <section className="gallery">
           <SectionName title="Our special gallery" subtitle="Topics for you" />
-          <CardList/>
+          <CardList />
         </section>
         <section className="gallery-small">
           <SectionName title="Other works for you" subtitle="Here some more" />
+          <SmallCardList />
         </section>
       </main>
       <Footer />

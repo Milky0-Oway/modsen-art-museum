@@ -4,15 +4,15 @@ import { Link } from 'react-router-dom';
 import { Art, URL_IMAGE } from '../../constants/api.ts';
 import { useFavorites } from '../../context/FavoritesContext.tsx';
 
-import './Card.scss';
+import './SmallCard.scss';
 
 import defaultImage from '../../assets/image 2.png';
 
-type CardProps = {
+type SmallCardProps = {
   item: Art;
 };
 
-const Card = ({ item }: CardProps): JSX.Element => {
+const SmallCard = ({ item }: SmallCardProps): JSX.Element => {
   const { favorites, toggleFavorite } = useFavorites();
   const isFavorite = favorites.some((el) => el.id === item.id);
 
@@ -25,19 +25,19 @@ const Card = ({ item }: CardProps): JSX.Element => {
   };
 
   return (
-    <div className="card">
-      <Link to={`/art/${item.id}`} className="card-link">
+    <div className="small-card">
+      <Link to={`/art/${item.id}`} className="small-card-link">
         <img
           src={URL_IMAGE({ imageId: item.image_id })}
-          alt="Card Image"
+          alt="Small Card Image"
           onError={handleImageError}
         />
       </Link>
-      <div className="card-text">
-        <div className="art-info">
-          <p className="art-title">{item.title ?? 'Unknown'}</p>
-          <p className="artist-title">{item.artist_title ?? 'Unknown'}</p>
-          <p className="art-status">
+      <div className="small-card-text">
+        <div className="small-art-info">
+          <p className="small-art-title">{item.title ?? 'Unknown'}</p>
+          <p className="small-artist-title">{item.artist_title ?? 'Unknown'}</p>
+          <p className="small-art-status">
             {item.is_public_domain ? 'Public' : 'Private'}
           </p>
         </div>
@@ -50,4 +50,4 @@ const Card = ({ item }: CardProps): JSX.Element => {
   );
 };
 
-export default Card;
+export default SmallCard;
