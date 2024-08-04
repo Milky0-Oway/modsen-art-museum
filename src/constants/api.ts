@@ -34,15 +34,10 @@ type Response = {
   total: number;
 };
 
-type Data = {
-  currentPage: number;
-  limit: number;
-};
 
-export const getData = async ({
-  currentPage,
-  limit,
-}: Data): Promise<Response> => {
+export const getData = async (
+  currentPage: number,
+  limit: number): Promise<Response> => {
   const response = await fetch(URL_PAGE({ currentPage, limit }));
   return response.json();
 };

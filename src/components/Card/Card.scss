@@ -98,7 +98,7 @@
   position: relative;
 }
 
-.button-favorite:hover {
+.button-favorite:hover, .active {
   background-color: $favorite-background;
 }
 

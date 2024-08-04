@@ -9,6 +9,8 @@ import SearchResultList from '../../components/SearchResultList/SearchResultList
 import { Art, URL_ART, URL_SEARCH } from '../../constants/api';
 
 import './Home.scss';
+import Loader from "../../components/Loader/Loader.tsx";
+import CardList from "../../components/CardList/CardList.tsx";
 
 const Home = (): JSX.Element => {
   const [searchResult, setSearchResult] = useState<Art[]>([]);
@@ -48,14 +50,18 @@ const Home = (): JSX.Element => {
           </h1>
           <SearchBar onSearch={handleSearch} />
         </section>
-        {searchResult.length > 0 && (
+        {searchResult.length > 0 ? (
           <section className="search-result">
             <SectionName title="Search result" subtitle="We found" />
             <SearchResultList loading={loading} searchResult={searchResult} />
           </section>
-        )}
+        ) : (loading &&
+            <div style={{marginTop: '30px'}}>
+              <Loader/>
+            </div>)}
         <section className="gallery">
           <SectionName title="Our special gallery" subtitle="Topics for you" />
+          <CardList/>
         </section>
         <section className="gallery-small">
           <SectionName title="Other works for you" subtitle="Here some more" />

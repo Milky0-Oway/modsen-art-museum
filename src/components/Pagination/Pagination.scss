@@ -1,0 +1,38 @@
+@import "src/variables";
+
+.pagination-wrapper {
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.page-numbers {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.page-number {
+  padding: 4px 10px;
+  cursor: pointer;
+  font-weight: 300;
+  font-size: 18px;
+}
+
+.selected {
+  background-color: $primary;
+  border-radius: 4px;
+  color: $white;
+  font-weight: 600;
+}
+
+.pagination-wrapper img {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
