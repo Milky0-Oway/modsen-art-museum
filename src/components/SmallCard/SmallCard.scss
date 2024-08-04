@@ -1,53 +1,50 @@
 @import 'src/variables';
 
-.card {
+.small-card {
   position: relative;
   height: auto;
+  width: fit-content;
   display: flex;
-  flex-direction: column;
+  gap: 16px;
+  flex-direction: row;
   align-items: center;
+  background: $white;
+  border: 1px solid $border;
+  padding: 17px 24px;
 }
 
-.card-link {
+.small-card-link {
   cursor: pointer;
   &:hover {
     box-shadow: 0 2px 35px 14px rgba(13, 13, 13, 0.04);
   }
 }
 
-.card-link img {
+.small-card-link img {
   position: relative;
-  width: 387px;
-  height: 444px;
-  z-index: 0;
+  width: 80px;
+  height: 80px;
 }
 
-.card-text {
-  position: relative;
-  margin-top: -62px;
+.small-card-text {
   box-sizing: border-box;
-  width: 334px;
-  height: 132px;
-  background: $white;
-  border: 1px solid $border;
   display: flex;
   gap: 8px;
-  padding: 17px 24px;
-  align-items: start;
+  align-items: center;
   align-content: center;
   justify-items: stretch;
-  z-index: 1;
 }
 
-.art-info {
+.small-art-info {
   width: 219px;
   height: 98px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 8px;
 }
 
-.art-title {
+.small-art-title {
   height: fit-content;
   width: 100%;
   font-weight: 500;
@@ -56,7 +53,7 @@
   letter-spacing: -0.03em;
 }
 
-.artist-title {
+.small-artist-title {
   margin-top: -7px;
   height: fit-content;
   width: auto;
@@ -67,7 +64,7 @@
   color: $primary-light;
 }
 
-.art-status {
+.small-art-status {
   height: fit-content;
   width: auto;
   font-weight: 700;
@@ -76,35 +73,11 @@
   letter-spacing: -0.01em;
 }
 
-.art-title,
-.artist-title,
-.art-status {
+.small-art-title,
+.small-artist-title,
+.small-art-status {
+  font-family: 'Inter', sans-serif;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-.button-favorite {
-  align-self: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 59px;
-  height: 59px;
-  background-color: $unfavorite-background;
-  border-radius: 50%;
-  transition: background 0.3s ease-in-out;
-  cursor: pointer;
-  position: relative;
-}
-
-.button-favorite:hover,
-.active {
-  background-color: $favorite-background;
-}
-
-.button-favorite::before {
-  content: url(../../assets/bookmark_main.svg);
-  width: 24px;
-  height: 24px;
 }
