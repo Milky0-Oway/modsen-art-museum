@@ -1,9 +1,7 @@
-$background: linear-gradient(90deg, #343333 38.05%, #484848 69.22%, #282828 98.98%);
-$primary-color: #E0A449;
-$secondary-color: #F17900;
+@import '../../variables';
 
 header {
-  background: $background;
+  background: $header-background;
   height: 127px;
   margin: 0;
   padding: 0;
@@ -38,15 +36,15 @@ nav {
 }
 
 .nav-link:hover {
-  p {
-    color: $primary-color;
-  }
   cursor: pointer;
+  p {
+    color: $primary-light;
+  }
 }
 
 .nav-link:active {
-  p {
-    color: $secondary-color;
-  }
   cursor: pointer;
+  p {
+    color: $primary;
+  }
 }

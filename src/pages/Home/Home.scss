@@ -1,0 +1,40 @@
+@import '../../variables';
+
+.text-primary {
+  color: $primary;
+}
+
+h1 {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 80px;
+  text-align: center;
+  width: 684px;
+  margin: 0;
+}
+
+.search {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  padding-top: 120px;
+  gap: 72px;
+}
+
+main {
+  background-color: $main-background;
+}
+
+.search-result {
+  margin-top: 60px;
+}
+
+.gallery {
+  margin-top: 120px;
+}
+
+.gallery-small {
+  margin-top: 120px;
+}
