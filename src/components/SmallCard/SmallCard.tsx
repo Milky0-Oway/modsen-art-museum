@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { Art, URL_IMAGE } from '../../constants/api.ts';
 import { useFavorites } from '../../context/FavoritesContext.tsx';
+import { isKnown, isPublic } from '../../utils/artHelpers.ts';
 
 import './SmallCard.scss';
 
@@ -35,11 +36,9 @@ const SmallCard = ({ item }: SmallCardProps): JSX.Element => {
       </Link>
       <div className="small-card-text">
         <div className="small-art-info">
-          <p className="small-art-title">{item.title ?? 'Unknown'}</p>
-          <p className="small-artist-title">{item.artist_title ?? 'Unknown'}</p>
-          <p className="small-art-status">
-            {item.is_public_domain ? 'Public' : 'Private'}
-          </p>
+          <p className="small-art-title">{isKnown(item.title)}</p>
+          <p className="small-artist-title">{isKnown(item.artist_title)}</p>
+          <p className="small-art-status">{isPublic(item.is_public_domain)}</p>
         </div>
         <div
           className={`button-favorite ${isFavorite && 'active'}`}
