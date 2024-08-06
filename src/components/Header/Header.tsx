@@ -6,6 +6,7 @@ import './Header.scss';
 import museumLogo from '../../assets/museum-logo 2.svg';
 import bookmarkIcon from '../../assets/bookmark.png';
 import homeIcon from '../../assets/home.svg';
+import BurgerMenu from '../BurgerMenu/BurgerMenu.tsx';
 
 type HeaderProps = {
 	isHomePage?: boolean;
@@ -35,6 +36,7 @@ const Header = memo(({ isHomePage = true }: HeaderProps): JSX.Element => {
 						/>
 						<p>Your favorites</p>
 					</Link>
+					<BurgerMenu />
 				</nav>
 			</div>
 		</header>
