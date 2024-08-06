@@ -1,12 +1,12 @@
 {
-  "references": [
-    {
-      "path": "./tsconfig.app.json"
-    },
-    {
-      "path": "./tsconfig.node.json"
-    }
-  ],
-  "include": ["src"],
-  "files": ["src/declarations.d.ts"]
+	"references": [
+		{
+			"path": "./tsconfig.app.json"
+		},
+		{
+			"path": "./tsconfig.node.json"
+		}
+	],
+	"include": ["src"],
+	"files": ["src/declarations.d.ts"]
 }

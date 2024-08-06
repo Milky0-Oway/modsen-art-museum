@@ -8,39 +8,39 @@ import bookmarkIcon from '../../assets/bookmark.png';
 import homeIcon from '../../assets/home.svg';
 
 type HeaderProps = {
-  isHomePage: boolean;
+	isHomePage?: boolean;
 };
 
-const Header = memo(
-  ({ isHomePage = true }: Partial<HeaderProps>): JSX.Element => {
-    return (
-      <header>
-        <div className="header-wrapper">
-          <img src={museumLogo} alt="Museum Logo" />
-          <nav className="menu">
-            {!isHomePage && (
-              <Link to="/" className="nav-link">
-                <img
-                  src={homeIcon}
-                  alt="Home Icon"
-                  style={{ height: '24px', width: '24px' }}
-                />
-                <p>Home</p>
-              </Link>
-            )}
-            <Link to="/favorites" className="nav-link">
-              <img
-                src={bookmarkIcon}
-                alt="Bookmark Icon"
-                style={{ height: '24px', width: '24px' }}
-              />
-              <p>Your favorites</p>
-            </Link>
-          </nav>
-        </div>
-      </header>
-    );
-  },
-);
+const Header = memo(({ isHomePage = true }: HeaderProps): JSX.Element => {
+	return (
+		<header>
+			<div className="header-wrapper">
+				<img src={museumLogo} alt="Museum Logo" />
+				<nav className="menu">
+					{!isHomePage && (
+						<Link to="/" className="nav-link">
+							<img
+								src={homeIcon}
+								alt="Home Icon"
+								style={{ height: '24px', width: '24px' }}
+							/>
+							<p>Home</p>
+						</Link>
+					)}
+					<Link to="/favorites" className="nav-link">
+						<img
+							src={bookmarkIcon}
+							alt="Bookmark Icon"
+							style={{ height: '24px', width: '24px' }}
+						/>
+						<p>Your favorites</p>
+					</Link>
+				</nav>
+			</div>
+		</header>
+	);
+});
+
+Header.displayName = 'Header';
 
 export default Header;
