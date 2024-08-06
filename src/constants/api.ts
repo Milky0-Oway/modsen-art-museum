@@ -26,7 +26,6 @@ export type Art = {
   dimensions: string;
   credit_line: string;
   image_id: string;
-  theme_titles: any;
 };
 
 type Response = {
@@ -34,10 +33,19 @@ type Response = {
   total: number;
 };
 
+type ArtResponse = {
+  data: Art;
+};
+
 export const getData = async (
   currentPage: number,
   limit: number,
 ): Promise<Response> => {
   const response = await fetch(URL_PAGE({ currentPage, limit }));
+  return response.json();
+};
+
+export const getArt = async (id: number | string): Promise<ArtResponse> => {
+  const response = await fetch(URL_ART({ artId: id }));
   return response.json();
 };
