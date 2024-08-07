@@ -7,4 +7,5 @@ export const isKnown = (val: unknown): string => {
 	return String(val);
 };
 
-export const isPublic = (val: boolean) => (val ? 'Public' : 'Private');
+export const isPublic = (val: boolean | undefined): string =>
+	val ? 'Public' : 'Private';

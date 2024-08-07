@@ -2,12 +2,12 @@ import React, { JSX, useMemo, useState } from 'react';
 
 import Loader from '../Loader/Loader.tsx';
 import Card from '../Card/Card.tsx';
+import SortDropdown from '../SortDropdown/SortDropdown.tsx';
+import ErrorBoundary from '../ErrorBoundary/ErrorBoundary.tsx';
 
 import { Art } from '../../constants/api.ts';
 
 import './SearchResultList.scss';
-import SortDropdown from '../SortDropdown/SortDropdown.tsx';
-import ErrorBoundary from '../ErrorBoundary/ErrorBoundary.tsx';
 
 type SearchResultListProps = {
 	loading: boolean;

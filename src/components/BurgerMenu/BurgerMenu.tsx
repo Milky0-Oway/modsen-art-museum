@@ -1,7 +1,9 @@
 import { useState, useRef, JSX } from 'react';
-import useOutsideClick from '../../utils/useOutsideClick';
-import './BurgerMenu.scss';
 import { Link } from 'react-router-dom';
+
+import useOutsideClick from '../../utils/useOutsideClick';
+
+import './BurgerMenu.scss';
 
 const BurgerMenu = (): JSX.Element => {
 	const [isOpen, setIsOpen] = useState(false);

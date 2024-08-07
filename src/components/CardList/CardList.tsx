@@ -1,11 +1,13 @@
 import { JSX, useEffect, useMemo, useState } from 'react';
 
-import './CardList.scss';
-import { Art, getData } from '../../constants/api.ts';
 import Card from '../Card/Card.tsx';
 import Loader from '../Loader/Loader.tsx';
 import Pagination from '../Pagination/Pagination.tsx';
 import ErrorBoundary from '../ErrorBoundary/ErrorBoundary.tsx';
+
+import { Art, getData } from '../../constants/api.ts';
+
+import './CardList.scss';
 
 const CardList = (): JSX.Element => {
 	const [data, setData] = useState<Art[]>([]);

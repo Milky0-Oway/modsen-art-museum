@@ -1,10 +1,12 @@
 import { JSX, useEffect, useMemo, useState } from 'react';
 
-import './SmallCardList.scss';
-import { Art, getData } from '../../constants/api.ts';
 import SmallCard from '../SmallCard/SmallCard.tsx';
 import Loader from '../Loader/Loader.tsx';
 import ErrorBoundary from '../ErrorBoundary/ErrorBoundary.tsx';
+
+import { Art, getData } from '../../constants/api.ts';
+
+import './SmallCardList.scss';
 
 const SmallCardList = (): JSX.Element => {
 	const [data, setData] = useState<Art[]>([]);

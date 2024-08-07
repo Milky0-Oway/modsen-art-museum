@@ -1,5 +1,7 @@
-import { JSX, useMemo } from 'react';
+import React, { JSX, useMemo } from 'react';
 import { Link } from 'react-router-dom';
+
+import ErrorBoundary from '../ErrorBoundary/ErrorBoundary.tsx';
 
 import { Art, URL_IMAGE } from '../../constants/api.ts';
 import { useFavorites } from '../../context/FavoritesContext.tsx';
@@ -8,8 +10,6 @@ import { isKnown, isPublic } from '../../utils/artHelpers.ts';
 import './Card.scss';
 
 import defaultImage from '../../assets/image 2.png';
-import React from 'react';
-import ErrorBoundary from '../ErrorBoundary/ErrorBoundary.tsx';
 
 type CardProps = {
 	item: Art;

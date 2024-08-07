@@ -8,11 +8,11 @@ import SearchResultList from '../../components/SearchResultList/SearchResultList
 import Loader from '../../components/Loader/Loader.tsx';
 import CardList from '../../components/CardList/CardList.tsx';
 import SmallCardList from '../../components/SmallCardList/SmallCardList.tsx';
+import ErrorBoundary from '../../components/ErrorBoundary/ErrorBoundary.tsx';
 
 import { Art, URL_ART, URL_SEARCH } from '../../constants/api';
 
 import './Home.scss';
-import ErrorBoundary from '../../components/ErrorBoundary/ErrorBoundary.tsx';
 
 const Home = (): JSX.Element => {
 	const [searchResult, setSearchResult] = useState<Art[]>([]);

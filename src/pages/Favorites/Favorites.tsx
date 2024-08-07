@@ -1,11 +1,12 @@
 import { JSX } from 'react';
+
 import Header from '../../components/Header/Header.tsx';
 import Footer from '../../components/Footer/Footer.tsx';
 import SectionName from '../../components/SectionName/SectionName.tsx';
 import FavoritesList from '../../components/FavoritesList/FavoritesList.tsx';
+import ErrorBoundary from '../../components/ErrorBoundary/ErrorBoundary.tsx';
 
 import './Favorites.scss';
-import ErrorBoundary from '../../components/ErrorBoundary/ErrorBoundary.tsx';
 
 const Favorites = (): JSX.Element => {
 	return (

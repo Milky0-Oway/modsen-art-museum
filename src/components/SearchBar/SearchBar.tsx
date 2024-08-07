@@ -3,10 +3,11 @@ import { useFormik } from 'formik';
 import { toFormikValidationSchema } from 'zod-formik-adapter';
 import { z } from 'zod';
 
+import ErrorBoundary from '../ErrorBoundary/ErrorBoundary.tsx';
+
 import useDebounce from '../../utils/useDebounce.ts';
 
 import './SearchBar.scss';
-import ErrorBoundary from '../ErrorBoundary/ErrorBoundary.tsx';
 
 type SearchBarProps = {
 	onSearch: (searchData: string) => void;
