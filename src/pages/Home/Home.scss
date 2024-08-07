@@ -1,41 +1,63 @@
 @import '../../variables';
 
 .text-primary {
-  color: $primary;
+	color: $primary;
 }
 
 h1 {
-  font-size: 64px;
-  font-weight: 700;
-  line-height: 80px;
-  text-align: center;
-  width: 684px;
-  margin: 0;
+	font-size: 64px;
+	font-weight: 700;
+	line-height: 80px;
+	text-align: center;
+	width: 684px;
+	margin: 0;
+
+	@media (max-width: 700px) {
+		width: auto;
+		font-size: 50px;
+		line-height: 60px;
+	}
 }
 
 .search {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  justify-items: center;
-  padding-top: 120px;
-  gap: 72px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	justify-items: center;
+	padding-top: 120px;
+	gap: 72px;
+
+	@media (max-width: 700px) {
+		padding-top: 80px;
+	}
 }
 
 main {
-  background-color: $main-background;
-  padding-bottom: 120px;
+	background-color: $main-background;
+	padding-bottom: 120px;
+
+	@media (max-width: 500px) {
+		padding-bottom: 60px;
+	}
 }
 
 .search-result {
-  margin-top: 60px;
+	margin-top: 60px;
 }
 
 .gallery {
-  margin-top: 120px;
+	margin-top: 120px;
+
+	@media (max-width: 700px) {
+		margin-top: 80px;
+	}
 }
 
 .gallery-small {
-  margin-top: 120px;
+	margin-top: 120px;
+
+	@media (max-width: 700px) {
+		margin-top: 80px;
+	}
 }

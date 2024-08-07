@@ -1,83 +1,87 @@
 @import 'src/variables';
 
 .small-card {
-  position: relative;
-  height: auto;
-  width: fit-content;
-  display: flex;
-  gap: 16px;
-  flex-direction: row;
-  align-items: center;
-  background: $white;
-  border: 1px solid $border;
-  padding: 17px 24px;
+	position: relative;
+	height: auto;
+	width: fit-content;
+	display: flex;
+	gap: 16px;
+	flex-direction: row;
+	align-items: center;
+	background: $white;
+	border: 1px solid $border;
+	padding: 17px 24px;
 }
 
 .small-card-link {
-  cursor: pointer;
-  &:hover {
-    box-shadow: 0 2px 35px 14px rgba(13, 13, 13, 0.04);
-  }
+	cursor: pointer;
+	&:hover {
+		box-shadow: 0 2px 35px 14px rgba(13, 13, 13, 0.04);
+	}
 }
 
 .small-card-link img {
-  position: relative;
-  width: 80px;
-  height: 80px;
+	position: relative;
+	width: 80px;
+	height: 80px;
 }
 
 .small-card-text {
-  box-sizing: border-box;
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  align-content: center;
-  justify-items: stretch;
+	box-sizing: border-box;
+	display: flex;
+	gap: 8px;
+	align-items: center;
+	align-content: center;
+	justify-items: stretch;
 }
 
 .small-art-info {
-  width: 219px;
-  height: 98px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 8px;
+	width: 219px;
+	height: 98px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 8px;
+
+	@media (max-width: 500px) {
+		width: 190px;
+	}
 }
 
 .small-art-title {
-  height: fit-content;
-  width: 100%;
-  font-weight: 500;
-  font-size: 17px;
-  line-height: 26px;
-  letter-spacing: -0.03em;
+	height: fit-content;
+	width: 100%;
+	font-weight: 500;
+	font-size: 17px;
+	line-height: 26px;
+	letter-spacing: -0.03em;
 }
 
 .small-artist-title {
-  margin-top: -7px;
-  height: fit-content;
-  width: auto;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 26px;
-  letter-spacing: -0.01em;
-  color: $primary-light;
+	margin-top: -7px;
+	height: fit-content;
+	width: auto;
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 26px;
+	letter-spacing: -0.01em;
+	color: $primary-light;
 }
 
 .small-art-status {
-  height: fit-content;
-  width: auto;
-  font-weight: 700;
-  font-size: 15px;
-  line-height: 26px;
-  letter-spacing: -0.01em;
+	height: fit-content;
+	width: auto;
+	font-weight: 700;
+	font-size: 15px;
+	line-height: 26px;
+	letter-spacing: -0.01em;
 }
 
 .small-art-title,
 .small-artist-title,
 .small-art-status {
-  font-family: 'Inter', sans-serif;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+	font-family: 'Inter', sans-serif;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }

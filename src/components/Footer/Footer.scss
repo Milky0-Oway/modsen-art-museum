@@ -1,13 +1,22 @@
 @import '../../variables';
 
 footer {
-  background-color: $white;
-  bottom: 0;
+	background-color: $white;
+	bottom: 0;
 }
 
 .footer-wrapper {
-  display: flex;
-  justify-content: space-between;
-  padding: 32px 320px;
-  align-items: center;
+	display: flex;
+	justify-content: space-between;
+	padding: 32px 320px;
+	align-items: center;
+
+	@media (max-width: 1200px) {
+		padding: 32px 10% 0 10%;
+	}
+
+	@media (max-width: 500px) {
+		flex-direction: column;
+		gap: 20px;
+	}
 }

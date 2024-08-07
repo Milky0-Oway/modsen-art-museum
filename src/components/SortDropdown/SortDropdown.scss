@@ -1,34 +1,34 @@
 @import 'src/variables';
 
 .sort-dropdown {
-  width: 250px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
+	width: 250px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
 }
 
 .sort-dropdown label {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 20px;
-  display: flex;
-  align-items: center;
-  color: $primary-light;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 20px;
+	display: flex;
+	align-items: center;
+	color: $primary-light;
 }
 
 .sort-dropdown select {
-  display: flex;
-  padding: 6px 4px;
-  justify-content: space-between;
-  align-items: center;
-  align-self: stretch;
-  border: 1px solid $gray;
-  background: $white;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 130%;
+	display: flex;
+	padding: 6px 4px;
+	justify-content: space-between;
+	align-items: center;
+	align-self: stretch;
+	border: 1px solid $gray;
+	background: $white;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 130%;
 }
