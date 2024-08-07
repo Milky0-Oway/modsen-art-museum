@@ -42,6 +42,10 @@
 	flex-direction: column;
 	justify-content: center;
 	gap: 8px;
+
+	@media (max-width: 500px) {
+		width: 190px;
+	}
 }
 
 .small-art-title {

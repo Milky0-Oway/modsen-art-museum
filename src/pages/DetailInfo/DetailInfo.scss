@@ -6,12 +6,29 @@
 	padding-top: 120px;
 	display: flex;
 	gap: 80px;
+
+	@media (max-width: 1600px) {
+		margin: auto;
+	}
+
+	@media (max-width: 1300px) {
+		padding-top: 60px;
+		flex-direction: column;
+		width: fit-content;
+		align-items: center;
+		gap: 40px;
+	}
 }
 
 .art-picture {
 	position: relative;
 	width: 500px;
 	height: 570px;
+
+	@media (max-width: 550px) {
+		width: 300px;
+		height: auto;
+	}
 }
 
 .art-picture img {
@@ -28,6 +45,11 @@
 .art-description {
 	display: flex;
 	flex-direction: column;
+
+	@media (max-width: 1300px) {
+		align-items: center;
+		text-align: center;
+	}
 }
 
 .text-title {
@@ -35,6 +57,10 @@
 	line-height: 40px;
 	margin-bottom: 16px;
 	font-weight: 400;
+
+	@media (max-width: 550px) {
+		font-size: 26px;
+	}
 }
 
 .text-artist {
@@ -43,6 +69,11 @@
 	line-height: 30px;
 	font-weight: 400;
 	color: $primary-light;
+
+	@media (max-width: 550px) {
+		font-size: 20px;
+		margin-top: 0;
+	}
 }
 
 .text-date {
@@ -68,4 +99,20 @@
 	display: flex;
 	flex-direction: column;
 	gap: 16px;
+
+	@media (max-width: 1300px) {
+		align-items: center;
+		text-align: center;
+		margin-top: 60px;
+		gap: 10px;
+	}
+
+	@media (max-width: 700px) {
+		width: auto;
+		padding: 0 20px;
+	}
+
+	@media (max-width: 550px) {
+		margin-top: 50px;
+	}
 }

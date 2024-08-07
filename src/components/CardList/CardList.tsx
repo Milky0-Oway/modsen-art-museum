@@ -34,9 +34,9 @@ const CardList = (): JSX.Element => {
 	};
 
 	return (
-		<div className="card-list-wrapper">
+		<div>
 			{!loading ? (
-				<div>
+				<div className="card-list-wrapper">
 					<div className="card-list">
 						{data.map((art) => (
 							<Card item={art} key={art.id} />

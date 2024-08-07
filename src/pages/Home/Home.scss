@@ -11,6 +11,12 @@ h1 {
 	text-align: center;
 	width: 684px;
 	margin: 0;
+
+	@media (max-width: 700px) {
+		width: auto;
+		font-size: 50px;
+		line-height: 60px;
+	}
 }
 
 .search {
@@ -21,11 +27,19 @@ h1 {
 	justify-items: center;
 	padding-top: 120px;
 	gap: 72px;
+
+	@media (max-width: 700px) {
+		padding-top: 80px;
+	}
 }
 
 main {
 	background-color: $main-background;
 	padding-bottom: 120px;
+
+	@media (max-width: 500px) {
+		padding-bottom: 60px;
+	}
 }
 
 .search-result {
@@ -34,8 +48,16 @@ main {
 
 .gallery {
 	margin-top: 120px;
+
+	@media (max-width: 700px) {
+		margin-top: 80px;
+	}
 }
 
 .gallery-small {
 	margin-top: 120px;
+
+	@media (max-width: 700px) {
+		margin-top: 80px;
+	}
 }
