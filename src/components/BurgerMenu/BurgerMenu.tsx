@@ -1,7 +1,7 @@
 import { useState, useRef, JSX } from 'react';
 import { Link } from 'react-router-dom';
 
-import useOutsideClick from '../../utils/useOutsideClick';
+import useOutsideClick from 'utils/useOutsideClick';
 
 import './BurgerMenu.scss';
 

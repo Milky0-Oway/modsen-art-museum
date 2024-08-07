@@ -1,13 +1,13 @@
 import { JSX, memo } from 'react';
 import { Link } from 'react-router-dom';
 
-import BurgerMenu from '../BurgerMenu/BurgerMenu.tsx';
+import BurgerMenu from 'components/BurgerMenu/BurgerMenu.tsx';
 
 import './Header.scss';
 
-import museumLogo from '../../assets/museum-logo 2.svg';
-import bookmarkIcon from '../../assets/bookmark.png';
-import homeIcon from '../../assets/home.svg';
+import museumLogo from 'assets/museum-logo 2.svg';
+import bookmarkIcon from 'assets/bookmark.png';
+import homeIcon from 'assets/home.svg';
 
 type HeaderProps = {
 	isHomePage?: boolean;

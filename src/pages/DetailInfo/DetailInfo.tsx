@@ -1,19 +1,19 @@
 import React, { JSX, useEffect, useState } from 'react';
-
-import Header from '../../components/Header/Header.tsx';
-import Footer from '../../components/Footer/Footer.tsx';
-import Loader from '../../components/Loader/Loader.tsx';
-import DimensionsText from '../../components/DimensionsText/DimensionsText.tsx';
-import ErrorBoundary from '../../components/ErrorBoundary/ErrorBoundary.tsx';
-
 import { useParams } from 'react-router-dom';
-import { Art, getArt, URL_IMAGE } from '../../constants/api.ts';
-import { useFavorites } from '../../context/FavoritesContext.tsx';
-import { isKnown, isPublic } from '../../utils/artHelpers.ts';
+
+import Header from 'components/Header/Header.tsx';
+import Footer from 'components/Footer/Footer.tsx';
+import Loader from 'components/Loader/Loader.tsx';
+import DimensionsText from 'components/DimensionsText/DimensionsText.tsx';
+import ErrorBoundary from 'components/ErrorBoundary/ErrorBoundary.tsx';
+
+import { Art, getArt, URL_IMAGE } from 'constants/api.ts';
+import { useFavorites } from 'context/FavoritesContext.tsx';
+import { isKnown, isPublic } from 'utils/artHelpers.ts';
 
 import './DetailInfo.scss';
 
-import defaultImage from '../../assets/image 2.png';
+import defaultImage from 'assets/image 2.png';
 
 const DetailInfo = (): JSX.Element => {
 	const { id } = useParams();

@@ -2,8 +2,8 @@ import React, { JSX, useMemo, useState } from 'react';
 
 import './Pagination.scss';
 
-import arrowLeft from '../../assets/ArrowLeft.svg';
-import arrowRight from '../../assets/ArrowRight.svg';
+import arrowLeft from 'assets/ArrowLeft.svg';
+import arrowRight from 'assets/ArrowRight.svg';
 
 type PaginationProps = {
 	currentPage: number;

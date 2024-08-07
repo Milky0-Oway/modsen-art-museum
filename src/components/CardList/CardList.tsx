@@ -1,11 +1,11 @@
 import { JSX, useEffect, useMemo, useState } from 'react';
 
-import Card from '../Card/Card.tsx';
-import Loader from '../Loader/Loader.tsx';
-import Pagination from '../Pagination/Pagination.tsx';
-import ErrorBoundary from '../ErrorBoundary/ErrorBoundary.tsx';
+import Card from 'components/Card/Card.tsx';
+import Loader from 'components/Loader/Loader.tsx';
+import Pagination from 'components/Pagination/Pagination.tsx';
+import ErrorBoundary from 'components/ErrorBoundary/ErrorBoundary.tsx';
 
-import { Art, getData } from '../../constants/api.ts';
+import { Art, getData } from 'constants/api.ts';
 
 import './CardList.scss';
 

@@ -1,10 +1,10 @@
 import { JSX, useEffect, useMemo, useState } from 'react';
 
-import SmallCard from '../SmallCard/SmallCard.tsx';
-import Loader from '../Loader/Loader.tsx';
-import ErrorBoundary from '../ErrorBoundary/ErrorBoundary.tsx';
+import SmallCard from 'components/SmallCard/SmallCard.tsx';
+import Loader from 'components/Loader/Loader.tsx';
+import ErrorBoundary from 'components/ErrorBoundary/ErrorBoundary.tsx';
 
-import { Art, getData } from '../../constants/api.ts';
+import { Art, getData } from 'constants/api.ts';
 
 import './SmallCardList.scss';
 

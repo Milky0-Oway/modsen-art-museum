@@ -3,9 +3,9 @@ import { useFormik } from 'formik';
 import { toFormikValidationSchema } from 'zod-formik-adapter';
 import { z } from 'zod';
 
-import ErrorBoundary from '../ErrorBoundary/ErrorBoundary.tsx';
+import ErrorBoundary from 'components/ErrorBoundary/ErrorBoundary.tsx';
 
-import useDebounce from '../../utils/useDebounce.ts';
+import useDebounce from 'utils/useDebounce.ts';
 
 import './SearchBar.scss';
 

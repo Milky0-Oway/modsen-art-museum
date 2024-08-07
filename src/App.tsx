@@ -1,10 +1,10 @@
 import { JSX } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import Home from './pages/Home/Home.tsx';
-import DetailInfo from './pages/DetailInfo/DetailInfo.tsx';
-import Favorites from './pages/Favorites/Favorites.tsx';
-import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary.tsx';
+import Home from 'pages/Home/Home.tsx';
+import DetailInfo from 'pages/DetailInfo/DetailInfo.tsx';
+import Favorites from 'pages/Favorites/Favorites.tsx';
+import ErrorBoundary from 'components/ErrorBoundary/ErrorBoundary.tsx';
 
 function App(): JSX.Element {
 	return (

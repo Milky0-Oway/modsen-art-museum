@@ -1,16 +1,16 @@
 import { JSX, useState } from 'react';
 
-import Header from '../../components/Header/Header.tsx';
-import Footer from '../../components/Footer/Footer.tsx';
-import SearchBar from '../../components/SearchBar/SearchBar.tsx';
-import SectionName from '../../components/SectionName/SectionName.tsx';
-import SearchResultList from '../../components/SearchResultList/SearchResultList.tsx';
-import Loader from '../../components/Loader/Loader.tsx';
-import CardList from '../../components/CardList/CardList.tsx';
-import SmallCardList from '../../components/SmallCardList/SmallCardList.tsx';
-import ErrorBoundary from '../../components/ErrorBoundary/ErrorBoundary.tsx';
+import Header from 'components/Header/Header.tsx';
+import Footer from 'components/Footer/Footer.tsx';
+import SearchBar from 'components/SearchBar/SearchBar.tsx';
+import SectionName from 'components/SectionName/SectionName.tsx';
+import SearchResultList from 'components/SearchResultList/SearchResultList.tsx';
+import Loader from 'components/Loader/Loader.tsx';
+import CardList from 'components/CardList/CardList.tsx';
+import SmallCardList from 'components/SmallCardList/SmallCardList.tsx';
+import ErrorBoundary from 'components/ErrorBoundary/ErrorBoundary.tsx';
 
-import { Art, URL_ART, URL_SEARCH } from '../../constants/api';
+import { Art, URL_ART, URL_SEARCH } from 'constants/api';
 
 import './Home.scss';
 

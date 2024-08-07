@@ -1,11 +1,11 @@
 import React, { JSX, useMemo, useState } from 'react';
 
-import Loader from '../Loader/Loader.tsx';
-import Card from '../Card/Card.tsx';
-import SortDropdown from '../SortDropdown/SortDropdown.tsx';
-import ErrorBoundary from '../ErrorBoundary/ErrorBoundary.tsx';
+import Loader from 'components/Loader/Loader.tsx';
+import Card from 'components/Card/Card.tsx';
+import SortDropdown from 'components/SortDropdown/SortDropdown.tsx';
+import ErrorBoundary from 'components/ErrorBoundary/ErrorBoundary.tsx';
 
-import { Art } from '../../constants/api.ts';
+import { Art } from 'constants/api.ts';
 
 import './SearchResultList.scss';
 

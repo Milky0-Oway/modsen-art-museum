@@ -1,10 +1,10 @@
 import React, { JSX, useEffect, useState } from 'react';
 
-import SmallCard from '../SmallCard/SmallCard.tsx';
-import SectionName from '../SectionName/SectionName.tsx';
-import ErrorBoundary from '../ErrorBoundary/ErrorBoundary.tsx';
+import SmallCard from 'components/SmallCard/SmallCard.tsx';
+import SectionName from 'components/SectionName/SectionName.tsx';
+import ErrorBoundary from 'components/ErrorBoundary/ErrorBoundary.tsx';
 
-import { useFavorites } from '../../context/FavoritesContext.tsx';
+import { useFavorites } from 'context/FavoritesContext.tsx';
 
 const FavoritesList = (): JSX.Element => {
 	const { favorites } = useFavorites();
