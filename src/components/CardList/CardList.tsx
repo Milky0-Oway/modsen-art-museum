@@ -42,7 +42,7 @@ const CardList = (): JSX.Element => {
 		<ErrorBoundary>
 			{!loading ? (
 				<div className="card-list-wrapper">
-					<div className="card-list">
+					<div className="card-list" data-testid="card-list">
 						{memoizedData.map((art) => (
 							<Card item={art} key={art.id} />
 						))}
@@ -54,7 +54,7 @@ const CardList = (): JSX.Element => {
 					/>
 				</div>
 			) : (
-				<Loader />
+				<Loader data-testid="loader" />
 			)}
 		</ErrorBoundary>
 	);

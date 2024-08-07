@@ -64,6 +64,7 @@ const DetailInfo = (): JSX.Element => {
 							<div
 								className={`button-favorite ${isFavorite ? 'active' : ''}`}
 								onClick={handleClick}
+								data-testid="favorite-button"
 							></div>
 						</section>
 						<section className="art-description">

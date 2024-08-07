@@ -32,7 +32,7 @@ const Card = ({ item }: CardProps): JSX.Element => {
 
 	return (
 		<ErrorBoundary>
-			<div className="card">
+			<div className="card" data-testid="card">
 				<Link to={`/art/${item.id}`} className="card-link">
 					<img
 						src={URL_IMAGE({ imageId: item.image_id })}
@@ -49,6 +49,7 @@ const Card = ({ item }: CardProps): JSX.Element => {
 					<div
 						className={`button-favorite ${isFavorite && 'active'}`}
 						onClick={handleClick}
+						data-testid="favorite-button"
 					></div>
 				</div>
 			</div>

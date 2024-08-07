@@ -4,7 +4,7 @@ import './Loader.scss';
 
 const Loader = (): JSX.Element => {
 	return (
-		<ul className="loader">
+		<ul className="loader" data-testid="loader">
 			<li className="dot"></li>
 			<li className="dot"></li>
 			<li className="dot"></li>

@@ -12,7 +12,13 @@ export default [
 		files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
 		languageOptions: {
 			parser: tsParser,
-			globals: globals.browser,
+			globals: {
+				...globals.browser,
+				...globals.jest,
+				module: 'readonly',
+				global: 'readonly',
+				__dirname: 'readonly',
+			},
 			sourceType: 'module',
 			ecmaVersion: 'latest',
 		},
@@ -34,6 +40,7 @@ export default [
 			'react/react-in-jsx-scope': 'off',
 			'prettier/prettier': 'error',
 			'react/jsx-no-target-blank': ['error', { allowReferrer: true }],
+			'react/display-name': 'off',
 		},
 	},
 ];

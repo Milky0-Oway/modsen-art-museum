@@ -21,7 +21,13 @@ const BurgerMenu = (): JSX.Element => {
 
 	return (
 		<div className="burger-menu-container">
-			<div className="burger-icon" onClick={toggleMenu}>
+			<div
+				className="burger-icon"
+				onClick={toggleMenu}
+				role="button"
+				tabIndex={0}
+				data-testid="burger-menu"
+			>
 				<div className={`line ${isOpen ? 'open' : ''}`}></div>
 				<div className={`line ${isOpen ? 'open' : ''}`}></div>
 				<div className={`line ${isOpen ? 'open' : ''}`}></div>
@@ -31,10 +37,14 @@ const BurgerMenu = (): JSX.Element => {
 					<nav className="burger-menu">
 						<ul className="burger-menu-list">
 							<li className="burger-menu-item">
-								<Link to="/">Home</Link>
+								<Link to="/" onClick={closeMenu}>
+									Home
+								</Link>
 							</li>
 							<li className="burger-menu-item">
-								<Link to="/favorites">Favorites</Link>
+								<Link to="/favorites" onClick={closeMenu}>
+									Favorites
+								</Link>
 							</li>
 						</ul>
 					</nav>

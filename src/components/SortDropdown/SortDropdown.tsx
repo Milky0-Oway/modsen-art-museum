@@ -16,7 +16,7 @@ const SortDropdown = ({
 	};
 
 	return (
-		<div className="sort-dropdown">
+		<div className="sort-dropdown" data-testid="sort-dropdown">
 			<label htmlFor="sort">Sort by</label>
 			<select id="sort" value={sortCriteria} onChange={onSortDropdownChange}>
 				<option value="default">Default</option>

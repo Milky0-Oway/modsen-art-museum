@@ -29,7 +29,7 @@ const SmallCard = ({ item }: SmallCardProps): JSX.Element => {
 
 	return (
 		<ErrorBoundary>
-			<div className="small-card">
+			<div className="small-card" data-testid="small-card">
 				<Link to={`/art/${item.id}`} className="small-card-link">
 					<img
 						src={URL_IMAGE({ imageId: item.image_id })}
@@ -48,6 +48,7 @@ const SmallCard = ({ item }: SmallCardProps): JSX.Element => {
 					<div
 						className={`button-favorite ${isFavorite && 'active'}`}
 						onClick={handleClick}
+						data-testid="favorite-button"
 					></div>
 				</div>
 			</div>

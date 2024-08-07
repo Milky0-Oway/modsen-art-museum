@@ -10,7 +10,7 @@ type DimensionPartProps = {
 	isLast: boolean;
 };
 
-const parseDimensions = (dimensions: string | undefined) => {
+export const parseDimensions = (dimensions: string | undefined) => {
 	if (!dimensions) return [];
 	return dimensions.split(';').map((part) => {
 		const [title, value] = part.split(':');
@@ -18,7 +18,7 @@ const parseDimensions = (dimensions: string | undefined) => {
 	});
 };
 
-const DimensionPart = ({ part, isLast }: DimensionPartProps) => (
+export const DimensionPart = ({ part, isLast }: DimensionPartProps) => (
 	<>
 		{part.value ? (
 			<>
