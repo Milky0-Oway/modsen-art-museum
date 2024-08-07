@@ -5,6 +5,7 @@ import { Art, getData } from '../../constants/api.ts';
 import Card from '../Card/Card.tsx';
 import Loader from '../Loader/Loader.tsx';
 import Pagination from '../Pagination/Pagination.tsx';
+import ErrorBoundary from '../ErrorBoundary/ErrorBoundary.tsx';
 
 const CardList = (): JSX.Element => {
 	const [data, setData] = useState<Art[]>([]);
@@ -36,7 +37,7 @@ const CardList = (): JSX.Element => {
 	const memoizedData = useMemo(() => data, [data]);
 
 	return (
-		<div>
+		<ErrorBoundary>
 			{!loading ? (
 				<div className="card-list-wrapper">
 					<div className="card-list">
@@ -53,7 +54,7 @@ const CardList = (): JSX.Element => {
 			) : (
 				<Loader />
 			)}
-		</div>
+		</ErrorBoundary>
 	);
 };
 

@@ -5,10 +5,11 @@ import SectionName from '../../components/SectionName/SectionName.tsx';
 import FavoritesList from '../../components/FavoritesList/FavoritesList.tsx';
 
 import './Favorites.scss';
+import ErrorBoundary from '../../components/ErrorBoundary/ErrorBoundary.tsx';
 
 const Favorites = (): JSX.Element => {
 	return (
-		<div>
+		<ErrorBoundary>
 			<Header isHomePage={false} />
 			<main>
 				<section className="favorites-title">
@@ -23,7 +24,7 @@ const Favorites = (): JSX.Element => {
 				</section>
 			</main>
 			<Footer />
-		</div>
+		</ErrorBoundary>
 	);
 };
 

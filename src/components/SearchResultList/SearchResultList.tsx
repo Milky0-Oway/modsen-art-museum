@@ -7,6 +7,7 @@ import { Art } from '../../constants/api.ts';
 
 import './SearchResultList.scss';
 import SortDropdown from '../SortDropdown/SortDropdown.tsx';
+import ErrorBoundary from '../ErrorBoundary/ErrorBoundary.tsx';
 
 type SearchResultListProps = {
 	loading: boolean;
@@ -40,23 +41,25 @@ const SearchResultList = ({
 	}, [searchResult, sortCriteria]);
 
 	return (
-		<div className="search-result-wrapper">
-			{!loading ? (
-				<>
-					<SortDropdown
-						sortCriteria={sortCriteria}
-						setSortCriteria={setSortCriteria}
-					/>
-					<div className="search-result-list">
-						{sortedResult.map((item) => (
-							<Card item={item} key={item.id} />
-						))}
-					</div>
-				</>
-			) : (
-				<Loader />
-			)}
-		</div>
+		<ErrorBoundary>
+			<div className="search-result-wrapper">
+				{!loading ? (
+					<>
+						<SortDropdown
+							sortCriteria={sortCriteria}
+							setSortCriteria={setSortCriteria}
+						/>
+						<div className="search-result-list">
+							{sortedResult.map((item) => (
+								<Card item={item} key={item.id} />
+							))}
+						</div>
+					</>
+				) : (
+					<Loader />
+				)}
+			</div>
+		</ErrorBoundary>
 	);
 };
 

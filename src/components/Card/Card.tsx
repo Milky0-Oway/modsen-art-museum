@@ -9,6 +9,7 @@ import './Card.scss';
 
 import defaultImage from '../../assets/image 2.png';
 import React from 'react';
+import ErrorBoundary from '../ErrorBoundary/ErrorBoundary.tsx';
 
 type CardProps = {
 	item: Art;
@@ -30,26 +31,28 @@ const Card = ({ item }: CardProps): JSX.Element => {
 	};
 
 	return (
-		<div className="card">
-			<Link to={`/art/${item.id}`} className="card-link">
-				<img
-					src={URL_IMAGE({ imageId: item.image_id })}
-					alt="Card Image"
-					onError={handleImageError}
-				/>
-			</Link>
-			<div className="card-text">
-				<div className="art-info">
-					<p className="art-title">{isKnown(item.title)}</p>
-					<p className="artist-title">{isKnown(item.artist_title)}</p>
-					<p className="art-status">{isPublic(item.is_public_domain)}</p>
+		<ErrorBoundary>
+			<div className="card">
+				<Link to={`/art/${item.id}`} className="card-link">
+					<img
+						src={URL_IMAGE({ imageId: item.image_id })}
+						alt="Card Image"
+						onError={handleImageError}
+					/>
+				</Link>
+				<div className="card-text">
+					<div className="art-info">
+						<p className="art-title">{isKnown(item.title)}</p>
+						<p className="artist-title">{isKnown(item.artist_title)}</p>
+						<p className="art-status">{isPublic(item.is_public_domain)}</p>
+					</div>
+					<div
+						className={`button-favorite ${isFavorite && 'active'}`}
+						onClick={handleClick}
+					></div>
 				</div>
-				<div
-					className={`button-favorite ${isFavorite && 'active'}`}
-					onClick={handleClick}
-				></div>
 			</div>
-		</div>
+		</ErrorBoundary>
 	);
 };
 

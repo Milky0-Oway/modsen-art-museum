@@ -12,6 +12,7 @@ import SmallCardList from '../../components/SmallCardList/SmallCardList.tsx';
 import { Art, URL_ART, URL_SEARCH } from '../../constants/api';
 
 import './Home.scss';
+import ErrorBoundary from '../../components/ErrorBoundary/ErrorBoundary.tsx';
 
 const Home = (): JSX.Element => {
 	const [searchResult, setSearchResult] = useState<Art[]>([]);
@@ -43,7 +44,7 @@ const Home = (): JSX.Element => {
 	};
 
 	return (
-		<div>
+		<ErrorBoundary>
 			<Header />
 			<main>
 				<section className="search">
@@ -74,7 +75,7 @@ const Home = (): JSX.Element => {
 				</section>
 			</main>
 			<Footer />
-		</div>
+		</ErrorBoundary>
 	);
 };
 

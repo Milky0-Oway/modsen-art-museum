@@ -4,6 +4,7 @@ import './SmallCardList.scss';
 import { Art, getData } from '../../constants/api.ts';
 import SmallCard from '../SmallCard/SmallCard.tsx';
 import Loader from '../Loader/Loader.tsx';
+import ErrorBoundary from '../ErrorBoundary/ErrorBoundary.tsx';
 
 const SmallCardList = (): JSX.Element => {
 	const [data, setData] = useState<Art[]>([]);
@@ -28,17 +29,19 @@ const SmallCardList = (): JSX.Element => {
 	const memoizedData = useMemo(() => data, [data]);
 
 	return (
-		<div className="small-card-list-wrapper">
-			{!loading ? (
-				<div className="small-card-list">
-					{memoizedData.map((art) => (
-						<SmallCard item={art} key={art.id} />
-					))}
-				</div>
-			) : (
-				<Loader />
-			)}
-		</div>
+		<ErrorBoundary>
+			<div className="small-card-list-wrapper">
+				{!loading ? (
+					<div className="small-card-list">
+						{memoizedData.map((art) => (
+							<SmallCard item={art} key={art.id} />
+						))}
+					</div>
+				) : (
+					<Loader />
+				)}
+			</div>
+		</ErrorBoundary>
 	);
 };
 

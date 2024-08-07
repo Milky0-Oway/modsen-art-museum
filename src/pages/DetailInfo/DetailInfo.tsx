@@ -13,6 +13,7 @@ import { isKnown, isPublic } from '../../utils/artHelpers.ts';
 import './DetailInfo.scss';
 
 import defaultImage from '../../assets/image 2.png';
+import ErrorBoundary from '../../components/ErrorBoundary/ErrorBoundary.tsx';
 
 const DetailInfo = (): JSX.Element => {
 	const { id } = useParams();
@@ -49,7 +50,7 @@ const DetailInfo = (): JSX.Element => {
 	};
 
 	return (
-		<div>
+		<ErrorBoundary>
 			<Header isHomePage={false} />
 			<main>
 				{!loading ? (
@@ -93,7 +94,7 @@ const DetailInfo = (): JSX.Element => {
 				)}
 			</main>
 			<Footer />
-		</div>
+		</ErrorBoundary>
 	);
 };
 

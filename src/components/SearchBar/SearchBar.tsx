@@ -6,6 +6,7 @@ import { z } from 'zod';
 import useDebounce from '../../utils/useDebounce.ts';
 
 import './SearchBar.scss';
+import ErrorBoundary from '../ErrorBoundary/ErrorBoundary.tsx';
 
 type SearchBarProps = {
 	onSearch: (searchData: string) => void;
@@ -50,26 +51,31 @@ const SearchBar = ({ onSearch }: SearchBarProps): JSX.Element => {
 	};
 
 	return (
-		<form onSubmit={formik.handleSubmit}>
-			<div
-				className="input-wrapper"
-				data-error={
-					formik.errors.searchData && formik.values.searchData
-						? formik.errors.searchData
-						: ''
-				}
-			>
-				<input
-					className="input"
-					type="text"
-					name="searchData"
-					value={formik.values.searchData}
-					onChange={handleChange}
-					placeholder="Search Art, Artist, Work..."
-				/>
-				<div className="input-icon" onClick={() => formik.handleSubmit()}></div>
-			</div>
-		</form>
+		<ErrorBoundary>
+			<form onSubmit={formik.handleSubmit}>
+				<div
+					className="input-wrapper"
+					data-error={
+						formik.errors.searchData && formik.values.searchData
+							? formik.errors.searchData
+							: ''
+					}
+				>
+					<input
+						className="input"
+						type="text"
+						name="searchData"
+						value={formik.values.searchData}
+						onChange={handleChange}
+						placeholder="Search Art, Artist, Work..."
+					/>
+					<div
+						className="input-icon"
+						onClick={() => formik.handleSubmit()}
+					></div>
+				</div>
+			</form>
+		</ErrorBoundary>
 	);
 };
 
