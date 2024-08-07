@@ -1,4 +1,4 @@
-import { JSX, useEffect, useState } from 'react';
+import { JSX, useEffect, useMemo, useState } from 'react';
 
 import './CardList.scss';
 import { Art, getData } from '../../constants/api.ts';
@@ -33,12 +33,14 @@ const CardList = (): JSX.Element => {
 		setCurrentPage(page);
 	};
 
+	const memoizedData = useMemo(() => data, [data]);
+
 	return (
 		<div>
 			{!loading ? (
 				<div className="card-list-wrapper">
 					<div className="card-list">
-						{data.map((art) => (
+						{memoizedData.map((art) => (
 							<Card item={art} key={art.id} />
 						))}
 					</div>

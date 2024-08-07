@@ -1,4 +1,4 @@
-import { JSX } from 'react';
+import React, { JSX } from 'react';
 
 import './SectionName.scss';
 
@@ -16,4 +16,4 @@ const SectionName = ({ title, subtitle }: SectionNameProps): JSX.Element => {
 	);
 };
 
-export default SectionName;
+export default React.memo(SectionName);

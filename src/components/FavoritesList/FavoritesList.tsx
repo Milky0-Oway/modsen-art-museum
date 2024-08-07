@@ -1,11 +1,11 @@
-import { JSX, useEffect, useState } from 'react';
+import React, { JSX, useEffect, useState } from 'react';
 
 import SmallCard from '../SmallCard/SmallCard.tsx';
 import SectionName from '../SectionName/SectionName.tsx';
 
 import { useFavorites } from '../../context/FavoritesContext.tsx';
 
-const SmallCardList = (): JSX.Element => {
+const FavoritesList = (): JSX.Element => {
 	const { favorites } = useFavorites();
 	const [isEmpty, setIsEmpty] = useState<boolean>(true);
 
@@ -28,4 +28,4 @@ const SmallCardList = (): JSX.Element => {
 	);
 };
 
-export default SmallCardList;
+export default React.memo(FavoritesList);

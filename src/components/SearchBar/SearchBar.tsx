@@ -1,4 +1,4 @@
-import { ChangeEvent, JSX, useEffect } from 'react';
+import React, { ChangeEvent, JSX, useEffect } from 'react';
 import { useFormik } from 'formik';
 import { toFormikValidationSchema } from 'zod-formik-adapter';
 import { z } from 'zod';
@@ -73,4 +73,4 @@ const SearchBar = ({ onSearch }: SearchBarProps): JSX.Element => {
 	);
 };
 
-export default SearchBar;
+export default React.memo(SearchBar);

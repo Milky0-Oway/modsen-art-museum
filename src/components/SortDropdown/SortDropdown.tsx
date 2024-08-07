@@ -1,4 +1,4 @@
-import { ChangeEvent, JSX } from 'react';
+import React, { ChangeEvent, JSX } from 'react';
 
 import './SortDropdown.scss';
 
@@ -29,4 +29,4 @@ const SortDropdown = ({
 	);
 };
 
-export default SortDropdown;
+export default React.memo(SortDropdown);

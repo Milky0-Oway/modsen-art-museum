@@ -1,4 +1,4 @@
-import { JSX, useMemo, useState } from 'react';
+import React, { JSX, useMemo, useState } from 'react';
 
 import Loader from '../Loader/Loader.tsx';
 import Card from '../Card/Card.tsx';
@@ -60,4 +60,4 @@ const SearchResultList = ({
 	);
 };
 
-export default SearchResultList;
+export default React.memo(SearchResultList);

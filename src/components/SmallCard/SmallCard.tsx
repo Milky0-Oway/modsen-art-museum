@@ -49,4 +49,4 @@ const SmallCard = ({ item }: SmallCardProps): JSX.Element => {
 	);
 };
 
-export default SmallCard;
+export default React.memo(SmallCard);

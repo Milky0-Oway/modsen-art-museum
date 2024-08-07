@@ -1,4 +1,4 @@
-import { JSX, useEffect, useState } from 'react';
+import { JSX, useEffect, useMemo, useState } from 'react';
 
 import './SmallCardList.scss';
 import { Art, getData } from '../../constants/api.ts';
@@ -25,11 +25,13 @@ const SmallCardList = (): JSX.Element => {
 		fetchData();
 	}, []);
 
+	const memoizedData = useMemo(() => data, [data]);
+
 	return (
 		<div className="small-card-list-wrapper">
 			{!loading ? (
 				<div className="small-card-list">
-					{data.map((art) => (
+					{memoizedData.map((art) => (
 						<SmallCard item={art} key={art.id} />
 					))}
 				</div>

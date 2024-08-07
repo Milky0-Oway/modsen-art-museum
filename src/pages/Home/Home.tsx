@@ -22,6 +22,7 @@ const Home = (): JSX.Element => {
 
 		try {
 			const response = await fetch(URL_SEARCH({ searchData }));
+			if (!response.ok) throw new Error('Failed to fetch search results');
 			const result = await response.json();
 			const arts = result.data;
 

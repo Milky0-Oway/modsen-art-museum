@@ -33,7 +33,15 @@ const FavoritesProvider = ({
 }): JSX.Element => {
 	const [favorites, setFavorites] = useState<Art[]>(() => {
 		const savedFavorites = sessionStorage.getItem('favorites');
-		return savedFavorites ? JSON.parse(savedFavorites) : [];
+		if (savedFavorites) {
+			try {
+				return JSON.parse(savedFavorites);
+			} catch (error) {
+				console.error('Error parsing favorites from sessionStorage', error);
+				return [];
+			}
+		}
+		return [];
 	});
 
 	useEffect(() => {
@@ -43,11 +51,9 @@ const FavoritesProvider = ({
 	const toggleFavorite = (art: Art) => {
 		setFavorites((prev) => {
 			const isFavorite = prev.some((el) => el.id === art.id);
-			if (isFavorite) {
-				return prev.filter((el) => el.id !== art.id);
-			} else {
-				return [...prev, art];
-			}
+			return isFavorite
+				? prev.filter((el) => el.id !== art.id)
+				: [...prev, art];
 		});
 	};
 

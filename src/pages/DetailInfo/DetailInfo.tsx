@@ -19,18 +19,17 @@ const DetailInfo = (): JSX.Element => {
 	const [art, setArt] = useState<Art | undefined>(undefined);
 	const [loading, setLoading] = useState<boolean>(false);
 	const { favorites, toggleFavorite } = useFavorites();
-	const isFavorite = favorites.some((el) => el.id === art?.id);
+	const isFavorite = art ? favorites.some((el) => el.id === art.id) : false;
 
 	useEffect(() => {
 		const fetchData = async () => {
+			if (!id) return;
 			setLoading(true);
 			try {
-				if (id) {
-					const result = await getArt(id);
-					setArt(result.data);
-				}
+				const result = await getArt(id);
+				setArt(result.data);
 			} catch (error) {
-				console.error(error);
+				console.error('Error fetching art data:', error);
 			} finally {
 				setLoading(false);
 			}
@@ -44,10 +43,9 @@ const DetailInfo = (): JSX.Element => {
 	};
 
 	const handleClick = () => {
-		if (art === undefined) {
-			return;
+		if (art) {
+			toggleFavorite(art);
 		}
-		return toggleFavorite(art);
 	};
 
 	return (
@@ -59,11 +57,11 @@ const DetailInfo = (): JSX.Element => {
 						<section className="art-picture">
 							<img
 								src={URL_IMAGE({ imageId: art?.image_id })}
-								alt="Art Image"
+								alt={art ? `${art.title} by ${art.artist_title}` : 'Art Image'}
 								onError={handleImageError}
 							/>
 							<div
-								className={`button-favorite ${isFavorite && 'active'}`}
+								className={`button-favorite ${isFavorite ? 'active' : ''}`}
 								onClick={handleClick}
 							></div>
 						</section>

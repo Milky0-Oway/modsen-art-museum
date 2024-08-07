@@ -18,10 +18,7 @@ const Favorites = (): JSX.Element => {
 					</h1>
 				</section>
 				<section className="favorites-list">
-					<SectionName
-						title={'Your favorites list'}
-						subtitle={'Saved by you'}
-					/>
+					<SectionName title="Your favorites list" subtitle="Saved by you" />
 					<FavoritesList />
 				</section>
 			</main>

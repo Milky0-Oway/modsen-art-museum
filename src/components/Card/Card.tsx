@@ -1,4 +1,4 @@
-import { JSX } from 'react';
+import { JSX, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 
 import { Art, URL_IMAGE } from '../../constants/api.ts';
@@ -16,7 +16,10 @@ type CardProps = {
 
 const Card = ({ item }: CardProps): JSX.Element => {
 	const { favorites, toggleFavorite } = useFavorites();
-	const isFavorite = favorites.some((el) => el.id === item.id);
+	const isFavorite = useMemo(
+		() => favorites.some((el) => el.id === item.id),
+		[favorites, item.id],
+	);
 
 	const handleImageError = (event: React.SyntheticEvent<HTMLImageElement>) => {
 		event.currentTarget.src = defaultImage;
@@ -50,4 +53,4 @@ const Card = ({ item }: CardProps): JSX.Element => {
 	);
 };
 
-export default Card;
+export default React.memo(Card);

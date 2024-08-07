@@ -1,4 +1,4 @@
-import { JSX, useState } from 'react';
+import React, { JSX, useMemo, useState } from 'react';
 
 import './Pagination.scss';
 
@@ -18,10 +18,11 @@ const Pagination = ({
 }: PaginationProps): JSX.Element => {
 	const [offset, setOffset] = useState(0);
 	const pagesPerSet = 4;
-	const pagesLength = Math.min(pagesPerSet, totalPages - offset);
-	const pages = Array.from({ length: pagesLength }).map(
-		(_, i) => i + 1 + offset,
-	);
+
+	const pages = useMemo(() => {
+		const pagesLength = Math.min(pagesPerSet, totalPages - offset);
+		return Array.from({ length: pagesLength }).map((_, i) => i + 1 + offset);
+	}, [offset, totalPages]);
 
 	const handlePrev = () => {
 		setOffset((prev) => Math.max(prev - pagesPerSet, 0));
@@ -54,4 +55,4 @@ const Pagination = ({
 	);
 };
 
-export default Pagination;
+export default React.memo(Pagination);
